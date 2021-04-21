@@ -55,9 +55,9 @@ describe('Upload.typescript', () => {
             {node}
             {file.name}
             {list.length}
-            <span onClick={actions.remove}>remove</span>
-            <span onClick={actions.download}>download</span>
-            <span onClick={actions.preview}>preview</span>
+            <span onClick={actions.onRemove}>remove</span>
+            <span onClick={actions.onDownload}>download</span>
+            <span onClick={actions.onPreview}>preview</span>
           </div>
         )}
       >
