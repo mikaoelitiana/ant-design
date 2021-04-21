@@ -46,4 +46,24 @@ describe('Upload.typescript', () => {
     );
     expect(upload).toBeTruthy();
   });
+
+  it('itemRender', () => {
+    const upload = (
+      <Upload
+        itemRender={(node, file, list, actions) => (
+          <div>
+            {node}
+            {file.name}
+            {list.length}
+            <span onClick={actions.remove}>remove</span>
+            <span onClick={actions.download}>download</span>
+            <span onClick={actions.preview}>preview</span>
+          </div>
+        )}
+      >
+        <span>click to upload</span>
+      </Upload>
+    );
+    expect(upload).toBeTruthy();
+  });
 });
