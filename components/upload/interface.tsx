@@ -67,9 +67,9 @@ export type ItemRender<T = any> = (
   file: UploadFile,
   fileList: Array<UploadFile<T>>,
   actions: {
-    onDownload: () => void;
-    onPreview: () => void;
-    onRemove: () => void;
+    download: () => void;
+    preview: () => void;
+    remove: () => void;
   },
 ) => React.ReactNode;
 
@@ -91,7 +91,10 @@ export interface UploadProps<T = any> {
   showUploadList?: boolean | ShowUploadListInterface;
   multiple?: boolean;
   accept?: string;
-  beforeUpload?: (file: RcFile, FileList: RcFile[]) => boolean | string | Promise<void | Blob | File>;
+  beforeUpload?: (
+    file: RcFile,
+    FileList: RcFile[],
+  ) => boolean | string | Promise<void | Blob | File>;
   onChange?: (info: UploadChangeParam) => void;
   listType?: UploadListType;
   className?: string;
